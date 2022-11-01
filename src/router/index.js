@@ -1,19 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-const routes = [
+const routes = [  // rute na stranice koje čine aplikaciju
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/',//putanja
+    name: 'home', // naziv
+    component: HomeView // odgovarajuća komponenta
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/login', // putanja
+    name: 'login', // naziv
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')  // komponenta je import kojom se komponenta prikazuje
+  },
+  {
+    path: '/signup', // putanja
+    name: 'signup', // naziv
+    component: () => import(/* webpackChunkName: "signup" */ '../views/Signup.vue')  // komponenta je import kojom se komponenta prikazuje
   }
 ]
 
